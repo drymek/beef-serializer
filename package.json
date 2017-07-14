@@ -4,12 +4,12 @@
   "description": "Library for serializing data of any complexity (supports JSON)",
   "main": "index.js",
   "scripts": {
-    "test-mocha": "./node_modules/.bin/mocha -r babel-register tests/**/*.spec.js tests/integration/**/*.js --timeout 8000",
-    "test-flow": "./node_modules/.bin/flow check",
-    "test": "npm run test-flow && npm run test-mocha",
-    "prepublish": "npm run babel-prepublish && npm run flow-prepublish",
-    "babel-prepublish": "babel src/ -d lib",
-    "flow-prepublish": "flow-copy-source src lib"
+    "test": "npm run test:flow && npm run test:mocha",
+    "test:mocha": "./node_modules/.bin/mocha -r babel-register tests/**/*.spec.js tests/integration/**/*.js --timeout 8000",
+    "test:flow": "./node_modules/.bin/flow check",
+    "prepublish": "npm run prepublish:babel && npm run prepublish:flow",
+    "prepublish:babel": "babel src/ -d lib",
+    "prepublish:flow": "flow-copy-source src lib"
   },
   "author": "Marcin Dryka",
   "license": "MIT",
